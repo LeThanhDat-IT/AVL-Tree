@@ -255,57 +255,57 @@ void menu(AVL t) {
 	int chon, x, k;
 	char ch;
 	do {
-		cout << "\n0.Thoat";
-		cout << "\n1.Tao cay AVL";
-		cout << "\n2.Them mot nut vao cay AVL";
-		cout << "\n3.Xoa mot nut trong cay AVL";
-		cout << "\n4.Duyet cay LNR";
-		cout << "\n5.Duyet cay NLR";
-		cout << "\n6.Duyet cay LRN";
-		cout << "\n7.Duyet theo tang";
-		cout << "\n8.Duyet theo tang toan bo cay AVL";
-		cout << "\n9.Tim kiem mot nut trong cay AVL";
-		cout << "\n10.Xoa toan bo cac nut trong cay AVL";
-		cout << "\n11.Chieu cao cua cay AVL";
-		cout << "\n12.Ghi File AVL";
-		cout << "\n13.Doc File AVL";
-		cout << "\n==> Vui long chon chuc nang ";
+		cout << "\n0.Exit";
+		cout << "\n1.Creat AVL Tree";
+		cout << "\n2.Add a node to the AVL tree";
+		cout << "\n3.Deelete a node in AVL tree";
+		cout << "\n4.Approve LNR tree";
+		cout << "\n5.Approve NLR tree";
+		cout << "\n6.Approve LRN tree";
+		cout << "\n7.Approve by floor";
+		cout << "\n8.Approve the entire AVL tree floor";
+		cout << "\n9.Find a node in AVL tree";
+		cout << "\n10.Delete all node in AVL tree";
+		cout << "\n11.Height of the tree";
+		cout << "\n12.Write AVL file";
+		cout << "\n13.Read AVL file";
+		cout << "\n==> Please select a function ";
 		cin >> chon;
 		if (chon == 0)	break;
 		switch (chon)
 		{
 			case 1:
 				createAVL(t);
-				cout << "\n-->Da tao cay thanh cong, vui long xem lai ";
+				cout << "\n-->Creat tree success, Please review ";
 				break;
 			case 2:
-				cout << "\nVui long nhap gia tri can them ";cin >> x;
+				cout << "\nPlease enter the value to add ";cin >> x;
 				insertNode(t, x);
-				cout << "\n-->Da them thanh cong, vui long xem lai ";
+				cout << "\n-->Add success, Please review ";
 				break;
 			case 3:
-				cout << "\nVui long nhap nut can xoa";cin >> x;
+				cout << "\nPlease enter node to delete";cin >> x;
 				delNode(t, x);
-				cout << "\n-->Da xoa thanh cong, vui long xem lai ";
+				cout << "\n-->Delete success, Please review ";
 				break;
 			case 4:
-				cout << "\nDuyet cay LNR";
+				cout << "\nApprove LNR tree";
 				LNR(t);
 				break;
 			case 5:
-				cout << "\nDuyet cay NLR";
+				cout << "\nApprove NLR tree";
 				NLR(t);
 				break;
 			case 6:
-				cout << "\nDuyet cay LRN";
+				cout << "\nApprove LRN tree";
 				LRN(t);
 				break;
 			case 7:
-				cout << "\nVui long nhap ta^`ng can xuat ra";cin >> k;
+				cout << "\nPlease enter the floor to export";cin >> k;
 				levelTraverse(t, k);
 				break;
 			case 8:
-				cout << "\nToan bo cay AVL xuat theo tang"<<endl;
+				cout << "\nAll AVL tree export by floor"<<endl;
 				for (int i = 0; i < heightTree(t); i++)
 				{
 					levelTraverse(t, i);
@@ -313,21 +313,21 @@ void menu(AVL t) {
 				}
 				break;
 			case 9:
-				cout << "\nVui long nhap gia tri can tim";
+				cout << "\nPlease enter the value to find";
 				cin >> x;
 				searchX(t, x);
 				break;
 			case 10:
-				cout << "\nBan co chac xoa toan bo cay AVL (Y/N)";
+				cout << "\nAre you sure to delete the tree (Y/N)";
 				cin >> ch;
 				if (ch == 'y' || ch == 'Y') {
 					removeTree(t);
-					cout << "\nDa xoa toan bo cac nut trong cay";
+					cout << "\nDeleted all node in tree";
 				}
 				t = NULL;
 				break;
 			case 11:
-				cout << "\nChieu cao cua cay AVL";
+				cout << "\nHeight of AVL tree";
 				cout << heightTree(t);
 				break;
 		}
